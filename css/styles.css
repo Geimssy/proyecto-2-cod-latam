@@ -2,7 +2,7 @@
 
 /* Fonts */
 /* Importar aquí la font */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
 /* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
@@ -56,7 +56,7 @@ main {
 */
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 18px;
     line-height: 1.2;
     background-color: #fbfbfb;
@@ -82,11 +82,19 @@ li.menu-item {
     padding: 15px;
 }
 
+li.menu-item:hover {
+    opacity: 80%;
+    transition-duration: 0.3s;
+    background-color: #77A1D3;
+}
+
 /* Para darle la forma circular a la imagen y que se aleje del borde*/
 figure img {
     max-width: 100%;
     border-radius: 50%;
     margin: 20px 0;
+    width: 400px;
+
 }
 
 /* Formato de las secciones */
@@ -115,15 +123,22 @@ p {
 /* Formato del bontón del CV */
 .boton {
     font-size: 20px;
-    background-color: #af599e;
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
     border-radius: 30px;
-    color: #fbfbfb;
     padding: 15px 15px;
+    transition: 0.5s;
+    background-size: 200%
 }
+
+.boton:hover {
+    background-position: right center;
+    color: #fff;
+}
+
 
 /* Formato de la sección de contacto */
 #contacto article {
-    background-color: rgba(175, 89, 158, 0.3);
+    background-color: #79CBCA;
     border-radius: 10px;
     padding: 20px;
 }
@@ -138,17 +153,42 @@ p {
 li img {
     width: 90px;
     padding: 10px;
-    margin: 20px 0;
+    margin: 0;
+}
+
+.icono:hover {
+    opacity: 30%;
+    transition-duration: 0.3s;
 }
 
 /* Formato del footer */
 footer {
     width: 100%;
     height: 90px;
-    background-color: #af599e;
+    background-color: #77A1D3;
     color: #fbfbfb;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 1024px) {
+    section#inicio {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    figure img {
+        width: 500px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    article.presentacion {
+        padding: 30px;
+        width: 50%;
+    }
 }
