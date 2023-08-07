@@ -1,15 +1,9 @@
-/* En este archivo escriban su CSS */
-
 /* Fonts */
-/* Importar aquí la font */
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
-/* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
-*  cuyos valores asigna por defecto el navegador.
-*/
-
 /* Reset */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -37,24 +31,6 @@ main {
     margin: auto;
 }
 
-/* Recomendaciones! 
-*  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
-*    "estilos generales". Una buena idea sería comenzar por el <body> ;)
-*
-*  - Recuerden que queremos evitar "repetir código", en CSS usando la cualidad de la herencia
-*    podemos setear ciertas propiedades en un elemento padre y dejar que sean heredadas (por ejemplo: font-size)
-*
-*  - Nadie sabe todas las propiedades CSS de memoria, si no saben como hacer algo no lo recuerdan, la respuesta
-*    pueden encontrarla buscando en la web algo como "CSS como hacer ... " o "propiedad css para hacer ..."
-*
-*  - Usen mucho las herramientas para desarrolladores del navegador para ir
-*    probando el CSS que escriben, resolver dudas y problemas.
-*
-*  - Paciencia, resiliencia y creatividad! No se desanimen, las primeras experiencias maquetando con HTML y CSS
-*    pueden ser frustrantes, pero estas habilidades se van desarrollando con la experiencia, es como aprender
-*    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
-*/
-
 body {
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
@@ -64,10 +40,13 @@ body {
     text-align: center
 }
 
+/* Formato del header */
+
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    padding: 15px;
     width: 100%;
     height: 90px;
     background-color: #fbfbfb;
@@ -75,29 +54,54 @@ header {
     top: 0;
     left: 0;
     box-shadow: 0 6px 10px -10px;
+    z-index: 1;
 }
 
-li.menu-item {
+div.container-fluid {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navbar-toggler {
+    border-style: none;
+}
+
+ul.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+li.nav-item a {
     display: inline-block;
     padding: 15px;
+    transition-duration: 0.5s;
 }
 
-li.menu-item:hover {
-    opacity: 80%;
-    transition-duration: 0.3s;
-    background-color: #77A1D3;
+li.nav-item:hover {
+    background-color: #79CBCA;
+}
+
+button#modOscuro {
+    background: none;
+    border-style: none;
+}
+
+button#modOscuro:hover {
+    transition-duration: 0.5s;
+    opacity: 30%;
 }
 
 /* Para darle la forma circular a la imagen y que se aleje del borde*/
+
 figure img {
     max-width: 100%;
     border-radius: 50%;
     margin: 20px 0;
     width: 400px;
-
 }
 
 /* Formato de las secciones */
+
 section {
     display: flex;
     flex-direction: column;
@@ -120,14 +124,21 @@ p {
     margin: 20px 0;
 }
 
+#hobby p {
+    padding: 25px;
+}
+
 /* Formato del bontón del CV */
+
 .boton {
     font-size: 20px;
     background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
     border-radius: 30px;
     padding: 15px 15px;
     transition: 0.5s;
-    background-size: 200%
+    background-size: 200%;
+    text-decoration: none;
+    color: #fbfbfb;
 }
 
 .boton:hover {
@@ -135,25 +146,49 @@ p {
     color: #fff;
 }
 
+/* Formato de las fotos en las slides */
+
+#carousel {
+    z-index: 0;
+    box-shadow: 0 4px 8px 0 rgba(119, 161, 211, 0.8), 0 6px 20px 0 rgba(121, 203, 202, 0.9);
+    border-radius: 35px;
+    padding: 1px;
+}
+
+.img-carousel {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 30px;
+    max-width: 380px;
+    transition-duration: 0.5s;
+}
 
 /* Formato de la sección de contacto */
+
 #contacto article {
-    background-color: #79CBCA;
+    background-color: #77A1D3;
     border-radius: 10px;
     padding: 20px;
 }
 
+#contacto {
+    color: #0f0f0f;
+}
+
 /* Formato de los íconos de contacto */
-.iconos {
+
+ul.iconos {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    padding: 0;
 }
 
 li img {
     width: 90px;
     padding: 10px;
     margin: 0;
+    transition-duration: 0.8s;
 }
 
 .icono:hover {
@@ -162,21 +197,90 @@ li img {
 }
 
 /* Formato del footer */
+
 footer {
     width: 100%;
     height: 90px;
-    background-color: #77A1D3;
-    color: #fbfbfb;
+    background-color: #79CBCA;
+    color: #0f0f0f;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Formato modo oscuro*/
+
+body.modo-oscuro {
+    background-color: #0f0f0f;
+    color: #fbfbfb
+}
+
+.modo-oscuro header {
+    background-color: #0f0f0f;
+    color: #fbfbfb;
+}
+
+.modo-oscuro li img {
+    filter: invert(100%);
+    transition-duration: 0.5s;
+}
+
+.modo-oscuro #contacto {
+    color: #fbfbfb;
+}
+
+.modo-oscuro .boton {
+    color: #0f0f0f;
+}
+
+.modo-oscuro .bg-body-tertiary {
+    filter: invert(100%);
+}
+
+/* Formato tablet */
+
+@media (min-width: 768px) {
+
+    #contacto {
+        padding: 50px;
+    }
+
+    .icono img {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .img-carousel,
+    #carousel {
+        max-width: 550px;
+    }
+}
+
+/* Formato PC */
+
 @media (min-width: 1024px) {
     section#inicio {
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    #contacto {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 230px;
     }
 
     figure img {
@@ -187,8 +291,26 @@ footer {
         font-size: 48px;
     }
 
+    h2 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
     article.presentacion {
         padding: 30px;
         width: 50%;
+    }
+
+    .icono img {
+        width: 150px;
+        transition: 0.8s;
+    }
+
+    .img-carousel,
+    #carousel {
+        max-width: 700px;
     }
 }
