@@ -37,7 +37,7 @@ body {
     line-height: 1.2;
     background-color: #fbfbfb;
     color: #0f0f0f;
-    text-align: center
+    text-align: center;
 }
 
 /* Formato del header */
@@ -136,7 +136,7 @@ p {
 
 h3 {
     font-weight: 700;
-    text-shadow: 1px 1px #A3BFE1, 1.5px 1.5px #A3BFE1, 2px 2px #A3BFE1, 2.5px 2.5px #A3BFE1, 3px 3px #77A1D3, 3.5px 3.5px #77A1D3, 4px 4px #77A1D3, 4.5px 4.5px #77A1D3, 6px 6px #77A1D3, 6.5px 6.5px #77A1D3;
+    text-shadow: 1px 1px #A3BFE1, 1.5px 1.5px #A3BFE1, 2px 2px #A3BFE1, 2.5px 2.5px #A3BFE1, 3px 3px #77A1D3, 3.5px 3.5px #77A1D3, 4px 4px #77A1D3;
 }
 
 /* Formato del bontón del CV */
@@ -253,7 +253,7 @@ body.modo-oscuro {
 
 .modo-oscuro h3 {
     color: #fbfbfb;
-    text-shadow: 1px 1px #1B4645, 1.5px 1.5px #1B4645, 2px 2px #1B4645, 2.5px 2.5px #1B4645, 3px 3px #79CBCA, 3.5px 3.5px #79CBCA, 4px 4px #79CBCA, 4.5px 4.5px #79CBCA, 6px 6px #79CBCA, 6.5px 6.5px #79CBCA;
+    text-shadow: 1px 1px #1B4645, 1.5px 1.5px #1B4645, 2px 2px #1B4645, 2.5px 2.5px #1B4645, 3px 3px #79CBCA, 3.5px 3.5px #79CBCA, 4px 4px;
     text-shadow: #79CBCA;
 }
 
