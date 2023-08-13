@@ -1,5 +1,4 @@
 //Con esto busco todos los menu-item
-
 const menuItems = document.querySelectorAll('.nav-item')
 
 menuItems.forEach(function (item) {
@@ -11,7 +10,6 @@ menuItems.forEach(function (item) {
 });
 
 //Botón modo oscuro
-
 const cambioModo = document.querySelector('#modOscuro');
 
 cambioModo.addEventListener('click', function () {
@@ -34,8 +32,7 @@ function nuevaTab(imageUrl) {
     window.open(imageUrl, '_blank');
 }
 
-// Function to set text content based on screen size
-
+// Funcion para cambiar el texto en PC
 textoParaPC();
 window.addEventListener('resize', textoParaPC);
 
